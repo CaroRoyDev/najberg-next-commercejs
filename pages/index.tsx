@@ -1,23 +1,19 @@
 import { Category } from '@chec/commerce.js/types/category'
 import { Merchant } from '@chec/commerce.js/types/merchant'
 import { Product } from '@chec/commerce.js/types/product'
+import { Container } from 'components/ui'
 import { ProductList } from 'components/ui/product-list'
 import { GetStaticProps } from 'next'
-import Head from 'next/head'
+
 import commerce from '../lib/commerce'
 
 const Home: React.FC<HomeProps> = ({ merchant, categories, products }) => {
   return (
     <>
-      {' '}
-      <Head>
-        <title>Etablissements Najberg</title>
-        <meta name="description" content="Lorem ipsum" key="desc" />
-      </Head>
       <h1>Hello</h1>
-      <section>
+      <Container as="section" justify="center">
         <ProductList products={products} />
-      </section>
+      </Container>
     </>
   )
 }

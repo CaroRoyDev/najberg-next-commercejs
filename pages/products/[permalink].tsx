@@ -1,11 +1,17 @@
 import { Product } from '@chec/commerce.js/types/product'
+import Head from 'next/head'
 import commerce from '../../lib/commerce'
 
 const ProductPage: React.FC<ProductPageProps> = ({ product: { name, price } }) => {
   return (
     <>
-      <h1>{name}</h1>
-      <p>{price.formatted_with_symbol}</p>
+      <Head>
+        <title>{name} | Etablissements Najberg</title>
+      </Head>
+      <>
+        <h1>{name}</h1>
+        <p>{price.formatted_with_symbol}</p>
+      </>
     </>
   )
 }

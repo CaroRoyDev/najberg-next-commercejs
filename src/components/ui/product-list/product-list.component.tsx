@@ -1,7 +1,7 @@
 import { Product } from '@chec/commerce.js/types/product'
 import React from 'react'
 import { ProductCard } from 'components/ui/product-card'
-import Link from 'next/link'
+import { List } from './product-list.styles'
 
 interface ProductListProps {
   products: Product[]
@@ -9,17 +9,13 @@ interface ProductListProps {
 
 const ProductList: React.FC<ProductListProps> = ({ products }) => {
   return (
-    <ul>
+    <List>
       {products.map((product: Product) => (
         <li key={product.id}>
-          <Link href={`/products/${product.permalink}`}>
-            <a>
-              <ProductCard product={product} />
-            </a>
-          </Link>
+          <ProductCard product={product} />
         </li>
       ))}
-    </ul>
+    </List>
   )
 }
 

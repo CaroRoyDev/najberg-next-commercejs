@@ -1,3 +1,10 @@
-const GlobalStyles = () => <></>
+import { globalCss } from './stitches.config'
 
-export default GlobalStyles
+const globalStyles = globalCss({
+  '*': { margin: 0, padding: 0 },
+  body: {
+    fontFamily: 'poppins, sans-serif',
+  },
+})
+
+export default globalStyles
